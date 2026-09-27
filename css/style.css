@@ -13,20 +13,34 @@ body {
     background-color: #FFF8E7;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 header {
     background-color: #6B4226;
     padding: 20px;
     border-bottom: 2px solid #4A3525;
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 header h1 {
-    margin: 0 0 15px;
+    margin: 0;
     font-size: 2rem;
     color: #FFF8E7;
 }
 
+nav {
+    display: flex;
+    gap: 20px;
+}
+
 nav a {
-    margin-right: 20px;
     color: #FFF8E7;
     text-decoration: none;
 }
@@ -41,17 +55,29 @@ section {
     margin-bottom: 30px;
 }
 
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
 .card {
     padding: 15px;
     border: 1px solid #6B4226;
     border-radius: 6px;
-    margin-bottom: 20px;
 }
 
 .book-cover {
-    width: 240px;
-    height: 320px;
+    width: 100%;
+    max-width: 240px;
+    aspect-ratio: 3 / 4;
+    height: auto;
     background-color: #D8BFA0;
+}
+
+.content-grid {
+    display: grid;
+    gap: 30px;
 }
 
 aside {
@@ -64,4 +90,28 @@ footer {
     font-size: 0.9rem;
     padding: 20px;
     color: #6B6258;
+}
+
+/* Планшет */
+@media (min-width: 600px) {
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+}
+
+/* Десктоп */
+@media (min-width: 1024px) {
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr 250px;
+        gap: 30px;
+    }
+
+    main {
+        max-width: 1400px;
+        padding: 30px;
+    }
 }

@@ -5,11 +5,17 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'HeadingFont';
+    src: url('../fonts/KyivTypeSerif-Regular2.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
+h1,
+h2,
+h3 {
+    font-family: 'HeadingFont', serif;
 }
 
 body {
@@ -19,6 +25,12 @@ body {
     line-height: 1.5;
     color: #4A3525;
     background-color: #FFF8E7;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 h1 {
@@ -150,4 +162,35 @@ footer {
         max-width: 1400px;
         padding: 30px;
     }
+}
+
+.book-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    margin: 10px 0;
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+/* Прочитано — зелений */
+.status-read .status-indicator {
+    background-color: #4F8A5B;
+}
+
+/* Читаю — синій */
+.status-reading .status-indicator {
+    background-color: #4A78B8;
+}
+
+/* Заплановано — помаранчевий */
+.status-planned .status-indicator {
+    background-color: #D99A32;
 }
